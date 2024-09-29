@@ -4,14 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
     var count = 0,
         interval;
     setTimeout(function() { $(".chat_animate figure img").removeClass("up_down").addClass("rotate"); }, 5000);
-    setTimeout(function() { $(".chat_animate figure img").css("opacity", "0.1"); }, 7500);
-    setTimeout(function() { $(".chat_animate figure").remove(); }, 8000);
+    setTimeout(function() { $(".chat_animate figure img").css("opacity", "0.1"); }, 1500);
+    setTimeout(function() { $(".chat_animate figure").remove(); }, 3000);
     setTimeout(function() {
         $(".chat_animate").html('<div class="chat_bot"><h2 class="title"><aside><iconify-icon icon="streamline:ai-edit-spark"></iconify-icon> AI Assistance</aside><iconify-icon icon="ci:arrow-reload-02"></iconify-icon></h2><ul class="mssg_content"></ul><fieldset><input type="text" class="cmt" oninput = "typing_animate()" placeholder="Send a message" name="comment" /><iconify-icon icon="radix-icons:paper-plane" onclick="trigger_mssg()"></iconify-icon></fieldset></div>');
         $(".chat_bot").fadeTo(1000, 1);
-        interval = setInterval(function() { count++;
-            message_content(); }, 4000);
-    }, 8100);
+        interval = setInterval(function() {
+            count++;
+            message_content();
+        }, 1000);
+    }, 2200);
 
     //Set message content
     function message_content() {
