@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <title>Animated Background Login Screen</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> //
+
     <link rel="stylesheet" href="./css/custom.css">
     <style>
         body,
@@ -25,7 +29,7 @@
         #login-box {
             border-radius: 10px;
             /* box-shadow: 0 0.5rem 1rem -0.25rem hsl(218deg 100% 72.96% / 42%); */
-            z-index: 9999;
+            z-index: 9;
             min-width: 450px;
             margin: 0 auto;
             background: rgb(255, 255, 255);
@@ -89,6 +93,26 @@
             font-size: 22px;
         }
         
+        #login-box button.btn-custom {
+            border-radius: 2px;
+            margin-top: 8px;
+            background: #6689ff;
+            color: white;
+            border-radius: 40px;
+            line-height: 36px;
+            font-size: 22px;
+        }
+        
+        #login-box button.btn-custom:focus {
+            border-radius: 2px;
+            margin-top: 8px;
+            background: #6689ff;
+            color: white;
+            border-radius: 40px;
+            line-height: 36px;
+            font-size: 22px;
+        }
+        
         #login-box button.btn-custom:hover {
             -webkit-transition: all 500ms ease;
             -moz-transition: all 500ms ease;
@@ -124,6 +148,41 @@
             text-decoration: none;
             font-size: 14px;
         }
+        
+        .password-wrapper {
+            position: relative;
+        }
+        
+        .password-wrapper input {
+            width: 100%;
+            padding-right: 40px;
+        }
+        
+        .password-wrapper i {
+            position: absolute;
+            right: 22px;
+            top: 38%;
+            transform: translateY(-50%);
+            font-size: 18px;
+        }
+        
+        .swal2-zindex {
+            z-index: 9999 !important;
+            /* Set custom z-index */
+        }
+        /* .swal2-custom-size {
+            width: 400px !important;
+            height: 200px !important;
+        }
+         */
+        
+        div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+            font-size: 16px !important;
+        }
+        
+        div:where(.swal2-container) .swal2-html-container {
+            font-size: 19px !important;
+        }
     </style>
 
 </head>
@@ -138,22 +197,28 @@
                 <!-- <h1 class="logo-caption"><span class="tweak">L</span>ogin</h1> -->
             </div>
             <!-- /.logo -->
-            <form action="">
+            <form id="loginForm" action="javascript:void(0);">
                 <div class="controls">
-                    <input type="email" name="username" placeholder="Email" class="form-control" />
-                    <input type="password" name="username" placeholder="Password" class="form-control" />
-                    <a href="./pages/home.html" type="button" class="btn btn-default btn-block btn-custom">Login</a>
+                    <input type="email" name="email" placeholder="Email" class="form-control" required/>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control" required/>
+                        <i class="fa-regular fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+                    </div>
+                    <button type="submit" class="btn btn-default btn-block btn-custom">Login</button>
                 </div>
             </form>
             <p class="new_fr">
-                <a href="">Forgot your password?</a>
+                <a href="#" id="forgotPassword">Forgot your password?</a>
             </p>
+
         </div>
     </div>
     <div id="particles-js"></div>
     <!-- partial -->
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'></script>
     <script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- <script src="./script.js"></script> -->
     <script>
         $.getScript("https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js", function() {
@@ -274,42 +339,78 @@
             });
         });
     </script>
+    <!-- credential check -->
     <script>
-        // Get the form element
-        const loginForm = document.getElementById('loginForm');
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting and changing the URL
 
-        // Add an event listener to the form for submit event
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
+            // Sample email and password for validation
+            const correctEmail = "user@example.com";
+            const correctPassword = "password123";
 
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
 
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-
-            if (email === "user@example.com" && password === "password123") {
-
-                window.location.href = 'index.html';
+            // Check if email and password match
+            if (email === correctEmail && password === correctPassword) {
+                window.location.href = "./pages/home.html"; // Redirect to next page
             } else {
-                alert("Invalid login credentials");
+                // Show SweetAlert pop-up in the center of the screen if the credentials are wrong
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Email or Password is incorrect",
+                });
             }
         });
     </script>
+    <!-- show and hide password -->
     <script>
-        function togglePasswordVisibility() {
-            const passwordInput = document.getElementById('password');
-            const eyeIcon = document.getElementById('eyeIcon');
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
 
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text'; // Change to text to show password
-                eyeIcon.setAttribute('name', 'eye'); // Change icon to eye
+        togglePassword.addEventListener("click", function() {
+            // Toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            // Toggle the icon between eye and eye-slash
+            if (type === "password") {
+                this.classList.remove("fa-eye-slash");
+                this.classList.add("fa-eye");
             } else {
-                passwordInput.type = 'password'; // Change back to password
-                eyeIcon.setAttribute('name', 'eye-off'); // Change icon back to eye-off
+                this.classList.remove("fa-eye");
+                this.classList.add("fa-eye-slash");
             }
-        }
+        });
     </script>
+    <!-- forget password -->
 
+    <script>
+        document.getElementById("forgotPassword").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+
+            Swal.fire({
+                title: "plz contact with admin",
+                showClass: {
+                    popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+            `
+                },
+                hideClass: {
+                    popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+            `
+                }
+            });
+        });
+    </script>
 </body>
+
+</html>
 
 </html>
