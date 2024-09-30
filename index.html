@@ -1,553 +1,315 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<html lang="en">
 
 <head>
-    <title>Home</title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:400,500,600%7CTeko:300,400,500%7CMaven+Pro:500">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bot.css">
-    <!--FONT AWESOME-->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
-
-    <!--ICONIFY-->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-
-    <!--PLUGIN-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
-    <!--GOOGLE FONTS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
+    <meta charset="UTF-8">
+    <title>Animated Background Login Screen</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
     <style>
-        .ie-panel {
-            display: none;
-            background: #212121;
-            padding: 10px 0;
-            box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
-            clear: both;
-            text-align: center;
+        body,
+        html {
+            height: 100%;
+            background-repeat: no-repeat;
+            background: #ffffff;
             position: relative;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #login-box {
+            border-radius: 10px;
+            /* box-shadow: 0 0.5rem 1rem -0.25rem hsl(218deg 100% 72.96% / 42%); */
+            z-index: 9999;
+            min-width: 450px;
+            margin: 0 auto;
+            background: rgb(255, 255, 255);
+            padding: 16px;
+            border-radius: 18px;
+            /* box-shadow: 0 0.5rem 1rem -0.25rem hsl(218deg 100% 72.96% / 42%), 
+            0 -0.5rem 1rem -0.25rem hsl(218deg 100% 72.96% / 42%); */
+            box-shadow: 0 0.5rem 1rem -0.25rem hsl(218deg 100% 72.96% / 32%), 0 0.5rem 0rem -1.25rem hsl(218deg 100% 72.96% / 32%);
+        }
+        
+        #login-box .logo .logo-caption {
+            font-family: 'Poiret One', cursive;
+            color: white;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+        
+        #login-box .logo .tweak {
+            color: #020200;
+        }
+        
+        #login-box .controls {
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        #login-box .controls input {
+            border-radius: 0px;
+            background: rgb(191 191 191 / 7%);
+            border: 0px;
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            padding-left: 22px;
+            border-radius: 40px;
+            margin-bottom: 20px;
+        }
+        
+        #login-box .controls input:focus {
+            box-shadow: none;
+        }
+        
+        #login-box a.btn-custom {
+            border-radius: 2px;
+            margin-top: 8px;
+            background: #6689ff;
+            color: white;
+            border-radius: 40px;
+            line-height: 36px;
+            font-size: 22px;
+        }
+        
+        #login-box a.btn-custom:focus {
+            border-radius: 2px;
+            margin-top: 8px;
+            background: #6689ff;
+            color: white;
+            border-radius: 40px;
+            line-height: 36px;
+            font-size: 22px;
+        }
+        
+        #login-box button.btn-custom:hover {
+            -webkit-transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+        }
+        
+        #particles-js {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: 50% 50%;
+            position: fixed;
+            top: 0px;
             z-index: 1;
         }
         
-        html.ie-10 .ie-panel,
-        html.lt-ie-10 .ie-panel {
-            display: block;
+        .form-control {
+            height: 50px;
+        }
+        
+        .new_fr {
+            margin-top: 25px;
+            text-align: right;
+            margin-bottom: 0px;
+        }
+        
+        .new_fr a {
+            margin-top: 10px;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            font-size: 14px;
         }
     </style>
+
 </head>
 
 <body>
-    <div class="ie-panel">
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>
-    </div>
-    <div class="preloader">
-        <div class="preloader-body">
-            <div class="cssload-container"><span></span><span></span><span></span><span></span>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+        <div id="login-box">
+            <div class="logo">
+                <!-- <img src="./dark-logo.svg" class="img img-responsive  center-block" /> -->
+                <img src="../images/logo-default-223x50.png" class="img img-responsive  center-block" />
+                <!-- <h1 class="logo-caption"><span class="tweak">L</span>ogin</h1> -->
             </div>
+            <!-- /.logo -->
+            <form action="">
+                <div class="controls">
+                    <input type="text" name="username" placeholder="Email" class="form-control" />
+                    <input type="text" name="username" placeholder="Password" class="form-control" />
+                    <a href="./pages/home.html" type="button" class="btn btn-default btn-block btn-custom">Login</a>
+                </div>
+            </form>
+            <p class="new_fr">
+                <a href="">Create an Account | </a>
+                <a href="">Forgot your password?</a>
+            </p>
         </div>
     </div>
-    <div class="page">
-        <div id="home">
-            <!-- Top Banner-->
-            <!-- <a class="section section-banner text-center d-none d-xl-block" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/banner-bg-02-1920x60.jpg); background-image: -webkit-image-set( url(images/banner/banner-bg-02-1920x60.jpg) 1x, url(images/banner/banner-bg-02-3840x120.jpg) 2x )"
-                target="_blank"><img src="images/banner/banner-fg-02-1600x60.png" srcset="images/banner/banner-fg-02-1600x60.png 1x, images/banner/banner-fg-02-3200x120.png 2x" alt="" width="1600" height="310"></a> -->
-            <!-- Page Header-->
-            <header class="section page-header">
-                <!-- RD Navbar-->
-                <div class="rd-navbar-wrap">
-                    <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed"
-                        data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px"
-                        data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-                        <div class="rd-navbar-main-outer">
-                            <div class="rd-navbar-main">
-                                <!-- RD Navbar Panel-->
-                                <div class="rd-navbar-panel">
-                                    <!-- RD Navbar Toggle-->
-                                    <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                                    <!-- RD Navbar Brand-->
-                                    <div class="rd-navbar-brand">
-                                        <a class="brand" href="index.html"><img src="images/logo-default-223x50.png" alt width="223" height="50" /></a>
-                                    </div>
-                                </div>
-                                <div class="rd-navbar-main-element">
-                                    <div class="rd-navbar-nav-wrap">
-                                        <!-- RD Navbar Share-->
-                                        <div class="rd-navbar-share fl-bigmug-line-share27" data-rd-navbar-toggle=".rd-navbar-share-list">
-                                            <ul class="list-inline rd-navbar-share-list">
-                                                <li class="rd-navbar-share-list-item">
-                                                    <a class="icon fa fa-facebook" href="#"></a>
-                                                </li>
-                                                <li class="rd-navbar-share-list-item">
-                                                    <a class="icon fa fa-twitter" href="#"></a>
-                                                </li>
-                                                <li class="rd-navbar-share-list-item">
-                                                    <a class="icon fa fa-google-plus" href="#"></a>
-                                                </li>
-                                                <li class="rd-navbar-share-list-item">
-                                                    <a class="icon fa fa-instagram" href="#"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <ul class="rd-navbar-nav">
-                                            <li class="rd-nav-item active"><a class="rd-nav-link" href="#home">Home</a></li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="#services">Services</a></li>
-                                            <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="#team">Team</a></li> -->
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="#contacts">Contacts</a></li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="./pages/login.html">Login</a></li>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </header>
+    <div id="particles-js"></div>
+    <!-- partial -->
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'></script>
+    <script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
+    <!-- <script src="./script.js"></script> -->
+    <script>
+        $.getScript("https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js", function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 70,
+                        "density": {
+                            "enable": true,
+                            "value_area": 900
+                        }
+                    },
+                    "color": {
+                        "value": '#6689ff' // Array of colors for dynamic effect
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 5,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#949494",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 100
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true,
+                "config_demo": {
+                    "hide_card": false,
+                    "background_color": "#b61924",
+                    "background_image": "",
+                    "background_position": "50% 50%",
+                    "background_repeat": "no-repeat",
+                    "background_size": "cover"
+                }
+            });
+        });
+    </script>
+    <script>
+        // Get the form element
+        const loginForm = document.getElementById('loginForm');
+
+        // Add an event listener to the form for submit event
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
 
 
-
-        </div>
-        <!-- See all services-->
-        <section class="section section-sm section-first bg-default text-center" id="services">
-            <div class="container">
-                <div class="row row-30 justify-content-center">
-
-                    <div class="col-xl-6 col-lg-6 align-content-center">
-                        <div class="additional">
-                            <section class="chat_animate">
-                                <figure>
-                                    <img src="https://i.postimg.cc/vZzn2Vwv/bot.png" class="up_down" alt />
-                                </figure>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-6">
-                        <div class="row row-30">
-                            <!-- <div class="col-sm-6 wow fadeInRight">
-                                <article class="box-icon-modern box-icon-modern-custom">
-                                    <div>
-                                        <h3 class="box-icon-modern-big-title">What We Offer</h3>
-                                        <div class="box-icon-modern-decor"></div><a class="button button-primary button-ujarak" href="#">View All Services</a>
-                                    </div>
-                                </article>
-                            </div> -->
-                            <div class="col-sm-6 wow fadeInRight" data-wow-delay=".1s">
-                                <article class="box-icon-modern box-icon-modern-2">
-                                    <div class="box-icon-modern-icon linearicons-laptop"></div>
-                                    <h5 class="box-icon-modern-title"><a href="./pages/report.html">PC<br>PROBLEM</a></h5>
-                                    <div class="box-icon-modern-decor"></div>
-                                    <!-- <p class="box-icon-modern-text">Need specific software for your company? We are ready to develop it!</p> -->
-                                </article>
-                            </div>
-                            <div class="col-sm-6 wow fadeInRight" data-wow-delay=".1s">
-                                <article class="box-icon-modern box-icon-modern-2">
-                                    <div class="box-icon-modern-icon material-icons-wifi"></div>
-                                    <h5 class="box-icon-modern-title"><a href="./pages/report.html">INTERNET<br>ISSUE</a></h5>
-                                    <div class="box-icon-modern-decor"></div>
-                                    <!-- <p class="box-icon-modern-text">Need specific software for your company? We are ready to develop it!</p> -->
-                                </article>
-                            </div>
-
-                            <div class="col-sm-6 wow fadeInRight" data-wow-delay=".2s">
-                                <article class="box-icon-modern box-icon-modern-2">
-                                    <div class="box-icon-modern-icon linearicons-chair"></div>
-                                    <h5 class="box-icon-modern-title"><a href="./pages/report.html">Furniture<br>PROBLEM</a></h5>
-                                    <div class="box-icon-modern-decor"></div>
-                                    <!-- <p class="box-icon-modern-text">Our experts provide custom products of any complexity for call centers.</p> -->
-                                </article>
-                            </div>
-                            <div class="col-sm-6 wow fadeInRight" data-wow-delay=".3s">
-                                <article class="box-icon-modern box-icon-modern-2">
-                                    <div class="box-icon-modern-icon fl-bigmug-line-electrical17"></div>
-                                    <h5 class="box-icon-modern-title"><a href="./pages/report.html">CIRCUIT<br>PROBLEM</a></h5>
-                                    <div class="box-icon-modern-decor"></div>
-                                    <!-- <p class="box-icon-modern-text">We can also offer you reliable cloud development solutions.</p> -->
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
 
+            if (email === "user@example.com" && password === "password123") {
 
+                window.location.href = 'index.html';
+            } else {
+                alert("Invalid login credentials");
+            }
+        });
+    </script>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
 
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text'; // Change to text to show password
+                eyeIcon.setAttribute('name', 'eye'); // Change icon to eye
+            } else {
+                passwordInput.type = 'password'; // Change back to password
+                eyeIcon.setAttribute('name', 'eye-off'); // Change icon back to eye-off
+            }
+        }
+    </script>
 
-        <!-- Meet The Team-->
-        <section class="section section-sm section-fluid bg-default" id="team">
-            <div class="container-fluid">
-                <h2>Meet The Team</h2>
-                <div class="row row-sm row-30 justify-content-center">
-                    <div class="col-md-6 col-lg-5 col-xl-3 wow fadeInRight">
-                        <!-- Team Classic-->
-                        <article class="team-classic team-classic-lg">
-                            <a class="team-classic-figure" href="#"><img src="images/team-11-420x424.jpg" alt width="420" height="424" /></a>
-                            <div class="team-classic-caption">
-                                <h4 class="team-classic-name"><a href="#">Ryan Wilson</a></h4>
-                                <p class="team-classic-status">Director of Production
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-5 col-xl-3 wow fadeInRight" data-wow-delay=".1s">
-                        <!-- Team Classic-->
-                        <article class="team-classic team-classic-lg">
-                            <a class="team-classic-figure" href="#"><img src="images/team-12-420x424.jpg" alt width="420" height="424" /></a>
-                            <div class="team-classic-caption">
-                                <h4 class="team-classic-name"><a href="#">Jill Peterson</a></h4>
-                                <p class="team-classic-status">UI Designer
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-5 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
-                        <!-- Team Classic-->
-                        <article class="team-classic team-classic-lg">
-                            <a class="team-classic-figure" href="#"><img src="images/team-13-420x424.jpg" alt width="420" height="424" /></a>
-                            <div class="team-classic-caption">
-                                <h4 class="team-classic-name"><a href="#">Sam Robinson</a></h4>
-                                <p class="team-classic-status">Senior Developer
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-5 col-xl-3 wow fadeInRight" data-wow-delay=".3s">
-                        <!-- Team Classic-->
-                        <article class="team-classic team-classic-lg">
-                            <a class="team-classic-figure" href="#"><img src="images/team-14-420x424.jpg" alt width="420" height="424" /></a>
-                            <div class="team-classic-caption">
-                                <h4 class="team-classic-name"><a href="#">Mary Lee</a></h4>
-                                <p class="team-classic-status">Software Developer
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- What people Say-->
-        <section class="section section-sm section-bottom-70 section-fluid bg-default">
-            <div class="container-fluid">
-                <h2>What people Say</h2>
-                <div class="row row-50 row-sm">
-                    <div class="col-md-6 col-xl-4 wow fadeInRight">
-                        <!-- Quote Modern-->
-                        <article class="quote-modern quote-modern-custom">
-                            <div class="unit unit-spacing-md align-items-center">
-                                <div class="unit-left">
-                                    <a class="quote-modern-figure" href="#"><img class="img-circles" src="images/user-11-75x75.jpg" alt width="75" height="75" /></a>
-                                </div>
-                                <div class="unit-body">
-                                    <h4 class="quote-modern-cite"><a href="#">Catherine
-                                                Williams</a></h4>
-                                    <p class="quote-modern-status">Regular client
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="quote-modern-text">
-                                <p class="q">RatherApp offers a high caliber of resources skilled in Microsoft Azure .NET, mobile and Quality Assurance. They became our true business partners over the past three years.</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-xl-4 wow fadeInRight" data-wow-delay=".1s">
-                        <!-- Quote Modern-->
-                        <article class="quote-modern quote-modern-custom">
-                            <div class="unit unit-spacing-md align-items-center">
-                                <div class="unit-left">
-                                    <a class="quote-modern-figure" href="#"><img class="img-circles" src="images/user-12-75x75.jpg" alt width="75" height="75" /></a>
-                                </div>
-                                <div class="unit-body">
-                                    <h4 class="quote-modern-cite"><a href="#">Rupert Wood</a></h4>
-                                    <p class="quote-modern-status">Regular client
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="quote-modern-text">
-                                <p class="q">RatherApp powered us with a competent team to develop products for banking services. The team has been delivering results within budget and time, which is amazing.</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-xl-4 wow fadeInRight" data-wow-delay=".2s">
-                        <!-- Quote Modern-->
-                        <article class="quote-modern quote-modern-custom">
-                            <div class="unit unit-spacing-md align-items-center">
-                                <div class="unit-left">
-                                    <a class="quote-modern-figure" href="#"><img class="img-circles" src="images/user-20-75x75.jpg" alt width="75" height="75" /></a>
-                                </div>
-                                <div class="unit-body">
-                                    <h4 class="quote-modern-cite"><a href="#">Samantha Brown</a></h4>
-                                    <p class="quote-modern-status">Regular client
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="quote-modern-text">
-                                <p class="q">RatherApp is a highly skilled and uniquely capable firm with multitudes of talent on-board. We have collaborated on a number of diverse projects that have been a great success.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Latest blog posts-->
-        <section class="section section-sm bg-default" id="news">
-            <div class="container">
-                <h2>Latest blog posts</h2>
-                <div class="row row-45">
-                    <div class="col-sm-6 col-lg-4 wow fadeInLeft">
-                        <!-- Post Modern-->
-                        <article class="post post-modern">
-                            <a class="post-modern-figure" href="#"><img src="images/post-10-370x307.jpg" alt width="370" height="307" />
-                                <div class="post-modern-time">
-                                    <time datetime="2019-07-04"><span
-                                                class="post-modern-time-month">07</span><span
-                                                class="post-modern-time-number">04</span></time>
-                                </div>
-                            </a>
-                            <h4 class="post-modern-title"><a href="#">Benefits of
-                                        Async/Await</a></h4>
-                            <p class="post-modern-text">Asynchronous functions are a good and bad thing in JavaScript. The good side is that asynchronous functions are non-blocking and...
-                            </p>
-                        </article>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay=".1s">
-                        <!-- Post Modern-->
-                        <article class="post post-modern">
-                            <a class="post-modern-figure" href="#"><img src="images/post-11-370x307.jpg" alt width="370" height="307" />
-                                <div class="post-modern-time">
-                                    <time datetime="2019-07-17"><span
-                                                class="post-modern-time-month">07</span><span
-                                                class="post-modern-time-number">17</span></time>
-                                </div>
-                            </a>
-                            <h4 class="post-modern-title"><a href="#">Key
-                                        Considerations of iPaaS</a></h4>
-                            <p class="post-modern-text">Digital transformation requires cloud appropriate adoption, legacy IT systems modernization, and Agile-based methodologies for faster...
-                            </p>
-                        </article>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay=".2s">
-                        <!-- Post Modern-->
-                        <article class="post post-modern">
-                            <a class="post-modern-figure" href="#"><img src="images/post-12-370x307.jpg" alt width="370" height="307" />
-                                <div class="post-modern-time">
-                                    <time datetime="2019-07-22"><span
-                                                class="post-modern-time-month">07</span><span
-                                                class="post-modern-time-number">22</span></time>
-                                </div>
-                            </a>
-                            <h4 class="post-modern-title"><a href="#">Never
-                                        Stop Optimizing Your Code</a></h4>
-                            <p class="post-modern-text">In this tutorial, we will discuss the Hibernate Query Language. HQL is an object-oriented query language. Hibernate Query...</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- Contact Form-->
-        <section class="section section-sm section-last bg-default text-left" id="contacts">
-            <div class="container">
-                <article class="title-classic">
-                    <div class="title-classic-title">
-                        <h3>Request a Consultation</h3>
-                    </div>
-                    <div class="title-classic-text">
-                        <p>If you have any questions, just fill in the contact form, and we will answer you shortly.
-                        </p>
-                    </div>
-                </article>
-                <form class="rd-form rd-form-variant-2 rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                    <div class="row row-14 gutters-14">
-                        <div class="col-md-4">
-                            <div class="form-wrap">
-                                <input class="form-input" id="contact-your-name-2" type="text" name="name" data-constraints="@Required">
-                                <label class="form-label" for="contact-your-name-2">Your
-                                        Name</label>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-wrap">
-                                <input class="form-input" id="contact-email-2" type="email" name="email" data-constraints="@Email @Required">
-                                <label class="form-label" for="contact-email-2">E-mail</label>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-wrap">
-                                <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric">
-                                <label class="form-label" for="contact-phone-2">Phone</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-wrap">
-                                <label class="form-label" for="contact-message-2">Message</label>
-                                <textarea class="form-input textarea-lg" id="contact-message-2" name="message" data-constraints="@Required"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="button button-primary button-pipaluk" type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
-
-
-        <!-- Contact information-->
-        <section class="section section-sm bg-default">
-            <div class="container">
-                <div class="row row-30 justify-content-center">
-                    <div class="col-sm-8 col-md-6 col-lg-4">
-                        <article class="box-contacts">
-                            <div class="box-contacts-body">
-                                <div class="box-contacts-icon fl-bigmug-line-cellphone55"></div>
-                                <div class="box-contacts-decor"></div>
-                                <p class="box-contacts-link"><a href="tel:#">+1 323-913-4688</a></p>
-                                <p class="box-contacts-link"><a href="tel:#">+1 323-888-4554</a></p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sm-8 col-md-6 col-lg-4">
-                        <article class="box-contacts">
-                            <div class="box-contacts-body">
-                                <div class="box-contacts-icon fl-bigmug-line-up104"></div>
-                                <div class="box-contacts-decor"></div>
-                                <p class="box-contacts-link"><a href="#">4730 Crystal Springs Dr,
-                                            Los Angeles, CA 90027</a></p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sm-8 col-md-6 col-lg-4">
-                        <article class="box-contacts">
-                            <div class="box-contacts-body">
-                                <div class="box-contacts-icon fl-bigmug-line-chat55"></div>
-                                <div class="box-contacts-decor"></div>
-                                <p class="box-contacts-link"><a href="mailto:#">mail@demolink.org</a></p>
-                                <p class="box-contacts-link"><a href="mailto:#">info@demolink.org</a></p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Page Footer-->
-        <footer class="section section-fluid footer-minimal context-dark">
-            <div class="bg-gray-15">
-                <div class="container-fluid">
-                    <div class="footer-minimal-inset oh">
-                        <ul class="footer-list-category-2">
-                            <li><a href="#">UI Design</a></li>
-                            <li><a href="#">Windows/Mac OS Apps</a></li>
-                            <li><a href="#">Android/iOS Apps</a></li>
-                            <li><a href="#">Cloud Solutions</a></li>
-                            <li><a href="#">Customer Support</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-minimal-bottom-panel text-sm-left">
-                        <div class="row row-10 align-items-md-center">
-                            <div class="col-sm-6 col-md-4 text-sm-right text-md-center">
-                                <div>
-                                    <ul class="list-inline list-inline-sm footer-social-list-2">
-                                        <li>
-                                            <a class="icon fa fa-facebook" href="#"></a>
-                                        </li>
-                                        <li>
-                                            <a class="icon fa fa-twitter" href="#"></a>
-                                        </li>
-                                        <li>
-                                            <a class="icon fa fa-google-plus" href="#"></a>
-                                        </li>
-                                        <li>
-                                            <a class="icon fa fa-instagram" href="#"></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4 order-sm-first">
-                                <!-- Rights-->
-                                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>
-                                    <span>RatherApp</span>
-                                </p>
-                            </div>
-                            <div class="col-sm-6 col-md-4 text-md-right"><span>All
-                                        rights reserved.</span>
-                                <span>Design&nbsp;by&nbsp;<a
-                                            href="https://www.templatemonster.com">TemplateMonster</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <div class="modal fade" id="modalCta" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4>Contact Us</h4>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span
-                                    aria-hidden="true">×</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="rd-form rd-form-variant-2 rd-mailform" data-form-output="form-output-global" data-form-type="contact-modal" method="post" action="bat/rd-mailform.php">
-                            <div class="row row-14 gutters-14">
-                                <div class="col-12">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="contact-modal-name" type="text" name="name" data-constraints="@Required">
-                                        <label class="form-label" for="contact-modal-name">Your
-                                                Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="contact-modal-email" type="email" name="email" data-constraints="@Email @Required">
-                                        <label class="form-label" for="contact-modal-email">E-mail</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="contact-modal-phone" type="text" name="phone" data-constraints="@Numeric">
-                                        <label class="form-label" for="contact-modal-phone">Phone</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-wrap">
-                                        <label class="form-label" for="contact-modal-message">Message</label>
-                                        <textarea class="form-input textarea-lg" id="contact-modal-message" name="message" data-constraints="@Required"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="button button-primary button-pipaluk" type="submit">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Global Mailform Output-->
-    <div class="snackbars" id="form-output-global"></div>
-    <!-- Javascript-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/bot.js"></script>
-    <!-- coded by Himic-->
 </body>
 
 </html>
